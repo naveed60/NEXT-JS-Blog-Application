@@ -16,7 +16,7 @@
     "eslint-config-next": "13.4.19",
     "firebase": "^11.0.2",
     "force": "^0.0.3",
-    "next": "^15.0.4-canary.12",
+    "next": "^15.0.4-canary.19",
     "next-auth": "^4.24.10",
     "quill": "^2.0.2",
     "react": "18.2.0",

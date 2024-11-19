@@ -3,17 +3,17 @@
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
+import 'react-quill-new/dist/quill.snow.css';
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-// import {
-//   getStorage,
-//   ref,
-//   uploadBytesResumable,
-//   getDownloadURL,
-// } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
+import ReactQuill from 'react-quill-new';
 
 const WritePage = () => {
   const { status } = useSession();
@@ -27,7 +27,7 @@ const WritePage = () => {
   const [catSlug, setCatSlug] = useState("");
 
   useEffect(() => {
-    // const storage = getSto rage(app);
+    const storage = getStorage(app);
     const upload = () => {
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
@@ -129,10 +129,10 @@ const WritePage = () => {
               </label>
             </button>
             <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
+              <Image src="/external.png" alt="nextjs" width={16} height={16} />
             </button>
             <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
+              <Image src="/video.png" alt="nextjs" width={16} height={16} />
             </button>
           </div>
         )}

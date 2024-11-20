@@ -1,23 +1,19 @@
-
 "use client";
-
-import Image from "next/image";
-import styles from "./themeToggle.module.css";
 import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
+import { FaSun, FaMoon } from "react-icons/fa"; // Import icons from React Icons
+import styles from "./themeToggle.module.css";
 
 const ThemeToggle = () => {
   const { theme, toggle } = useContext(ThemeContext);
-console.log("theme",theme)
+
   return (
-    <div
-      className={styles.container}
-      onClick={toggle}
-     >
-      <Image src="/moon.png" alt="nextjs" width={14} height={14} />
-      <div
-        className={styles.ball}></div>
-      <Image src="/sun.png" alt="nextjs" width={14} height={14} />
+    <div className={styles.container} onClick={toggle}>
+      {theme === "dark" ? (
+        <FaSun className={styles.icon} title="Switch to light mode" />
+      ) : (
+        <FaMoon className={styles.icon} title="Switch to dark mode" />
+      )}
     </div>
   );
 };
